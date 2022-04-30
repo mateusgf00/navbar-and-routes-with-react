@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from 'rbx';
-import '../../styles/sidebar.scss'
+import './sidebar.scss'
 import { SideBarData } from './sidebardata';
 import { valueToPercent } from '@mui/base';
 import logoImagem from '../../assets/images/2.png'
@@ -17,8 +17,8 @@ function SideBar() {
                             onClick={() => {
                                 window.location.pathname = val.link;
                             }}>
-                            <div id='icon'>{val.icon}</div>
-                            <div id='title'>{val.title}</div>
+                            <a id='icon'>{val.icon}</a>
+                            <a id='title'>{val.title}</a>
                         </li>
                     )
                 })}

@@ -1,9 +1,13 @@
-@import "./custom_colors";
+@import "./../../styles/custom_colors";
 
 div.Sidebar{
     height: 100%;
-    width: 30%;
+    width: 100%;
     background-color: #53389f;
+
+    a{
+        color: #ffffff;
+    }
 
     img{
         align-items: center;

@@ -1,12 +1,8 @@
-import React, { Fragment } from 'react';
-import { Notification, Section } from 'rbx';
+import React from 'react';
 import './App.scss';
 import Routes from './routes';
 
-const App = () => (
-    <Fragment>
-        <Routes/>
-    </Fragment>
-);
+const App = () => <Routes/>    
+
 
 export default App;

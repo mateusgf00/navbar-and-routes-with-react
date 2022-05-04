@@ -1,122 +1,63 @@
-import React, { Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Column, Title, Card } from 'rbx';
 import SubsidiaryFilters from './filtros';
 import './subsidiary.scss';
 
-function SubsidiaryForm() {
-    return (
-        <Fragment>
-            <SubsidiaryFilters />
-            <Column.Group multiline id="column-group">
-                <Column size="one-quarter">
-                    <Card>
-                        <Card.Content>
-                            <p>Filial: 1</p>
-                            <p>Cidade: São Paulo</p>
-                            
-                        </Card.Content>
-                        <Card.Footer as="footer">
-                            <Card.Footer.Item as="a">
-                                <span>
-                                    Abrir
-                                </span>
-                            </Card.Footer.Item>
-                            <Card.Footer.Item as="a">
-                                <span>
-                                    Editar
-                                </span>
-                            </Card.Footer.Item>
-                        </Card.Footer>
-                    </Card>
-                </Column>
-                <Column size="one-quarter">
-                    <Card>
-                        <Card.Content>
-                            <p>Filial: 2</p>
-                            <p>Cidade: Rio de Janeiro</p>
-                            
-                        </Card.Content>
-                        <Card.Footer as="footer">
-                            <Card.Footer.Item as="a">
-                                <span>
-                                    Abrir
-                                </span>
-                            </Card.Footer.Item>
-                            <Card.Footer.Item as="a">
-                                <span>
-                                    Editar
-                                </span>
-                            </Card.Footer.Item>
-                        </Card.Footer>
-                    </Card>
-                </Column>
-                <Column size="one-quarter">
-                    <Card>
-                        <Card.Content>
-                            <p>Filial: 3</p>
-                            <p>Cidade: Rio de Janeiro</p>
-                            
-                        </Card.Content>
-                        <Card.Footer as="footer">
-                            <Card.Footer.Item as="a">
-                                <span>
-                                    Abrir
-                                </span>
-                            </Card.Footer.Item>
-                            <Card.Footer.Item as="a">
-                                <span>
-                                    Editar
-                                </span>
-                            </Card.Footer.Item>
-                        </Card.Footer>
-                    </Card>
-                </Column>
-                <Column size="one-quarter">
-                    <Card>
-                        <Card.Content>
-                            <p>Filial: 4</p>
-                            <p>Cidade: Londres</p>
-                            
-                        </Card.Content>
-                        <Card.Footer as="footer">
-                            <Card.Footer.Item as="a">
-                                <span>
-                                    Abrir
-                                </span>
-                            </Card.Footer.Item>
-                            <Card.Footer.Item as="a">
-                                <span>
-                                    Editar
-                                </span>
-                            </Card.Footer.Item>
-                        </Card.Footer>
-                    </Card>
-                </Column>
-                <Column size="one-quarter">
-                    <Card>
-                        <Card.Content>
-                            <p>Filial: 5</p>
-                            <p>Cidade: Nova Iorque</p>
-                            
-                        </Card.Content>
-                        <Card.Footer as="footer">
-                            <Card.Footer.Item as="a">
-                                <span>
-                                    Abrir
-                                </span>
-                            </Card.Footer.Item>
-                            <Card.Footer.Item as="a">
-                                <span>
-                                    Editar
-                                </span>
-                            </Card.Footer.Item>
-                        </Card.Footer>
-                    </Card>
-                </Column>
-            </Column.Group>
-        </Fragment>
+const cards =[{
+  key: 1,
+  filial: '1',
+  cidade: 'São paulo'
+},{
+  key: 2,
+  filial: '2',
+  cidade: 'São paulo'
+},{
+  key: 3,
+  filial: '3',
+  cidade: 'São paulo'
+},{
+  key: 4,
+  filial: '4',
+  cidade: 'São paulo'
+},{
+  key: 5,
+  filial: '5',
+  cidade: 'São paulo'
+},{
+  key: 6,
+  filial: '6',
+  cidade: 'São paulo'
+}];
 
-    )
-}
+const SubsidiaryForm = () => (
+    <>
+      <SubsidiaryFilters />
+      <Column.Group multiline id="column-group">
+        {cards?.map((card) => (
+          <Column size="one-quarter" key={card?.filial}>
+            <Card>
+              <Card.Content>
+                <p>Filial: {card?.filial}</p>
+                <p>Cidade: {card?.cidade}</p>
+
+                </Card.Content>
+                <Card.Footer as="footer">
+                    <Card.Footer.Item as="a">
+                        <span>
+                            Abrir
+                        </span>
+                    </Card.Footer.Item>
+                    <Card.Footer.Item as="a">
+                        <span>
+                            Editar
+                        </span>
+                    </Card.Footer.Item>
+                </Card.Footer>
+            </Card>
+          </Column>
+        ))}
+      </Column.Group>
+    </>
+)
 
 export default SubsidiaryForm;
